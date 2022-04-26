@@ -1,0 +1,19 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class PasswordsTest {
+
+	@Test
+	void test1() {
+		boolean result = Passwords.addPassword("jiggy");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test2() {
+		boolean result = Passwords.addPassword("jiggy");
+		assertTrue(result);
+	}
+
+}

@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Passwords {
+
+	public static void main(String[] args) {
+
+		
+
+	}
+	
+	public static boolean addPassword(String password, ArrayList<String> stored) {
+		boolean allTrue = false;
+		
+		if (!stored.contains(password)) {
+			stored.add(password);
+			allTrue = true;
+		}
+		
+		return allTrue;
+	}
+
+}

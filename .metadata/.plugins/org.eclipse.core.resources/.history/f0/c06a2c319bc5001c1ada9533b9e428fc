@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+
+public class Passwords {
+	public static ArrayList<String> stored = new ArrayList<String>();
+
+	public static void main(String[] args) {
+
+	}
+
+	public static boolean addPassword(String password) {
+		boolean allTrue = false;
+		int count = 0;
+		String vowel = "AEIOUY";
+
+		if (!stored.contains(password)) {
+			if (password.length() > 7 && password.length() < 12) {
+				if (password.matches("(.*[0-9].*)")) {
+					if (password.contains("6") || password.contains(" ")) {
+						allTrue = false;
+					} else {
+						for (int i = 0; i < password.length(); i++) {
+							if (password.contains(vowel)) {
+								count++;
+							}
+						}
+						if (count >= 2) {
+							stored.add(password);
+							allTrue = true;
+						}
+					}
+				}
+			}
+			if (password.equalsIgnoreCase("admin") || password.equalsIgnoreCase("mod")) {
+				stored.add(password);
+				allTrue = true;
+			}
+		}
+
+		return allTrue;
+	}
+
+}

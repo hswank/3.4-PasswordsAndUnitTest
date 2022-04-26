@@ -1,0 +1,82 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
+
+class PasswordsTest {
+
+	@Test
+	void test1() {
+		boolean result = Passwords.addPassword("jIIggy123");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test1AndAHalf() {
+		boolean result = Passwords.addPassword("jIIggY123");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test2() {
+		boolean result = Passwords.addPassword("123BLAAH");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test2AndAHalf() {
+		boolean result = Passwords.addPassword("blah");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test3() {
+		boolean result = Passwords.addPassword("JIGGY123");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test3AndAHalf() {
+		boolean result = Passwords.addPassword("JIGGY126");
+		System.out.println(Passwords.stored);
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test4() {
+		boolean result = Passwords.addPassword("JIIGGY 12");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test4AndAHalf() {
+		boolean result = Passwords.addPassword("SMOOCH 3");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test5() {
+		boolean result = Passwords.addPassword("jIggY123");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test5AndAHalf() {
+		boolean result = Passwords.addPassword("jiggy123");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test6() {
+		boolean result = Passwords.addPassword("admin");
+		assertTrue(result);
+	}
+
+	@Test
+	void test6AndAHalf() {
+		boolean result = Passwords.addPassword("mod");
+		assertTrue(result);
+	}
+	
+}

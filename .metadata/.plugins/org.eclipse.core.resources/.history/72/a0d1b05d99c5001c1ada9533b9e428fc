@@ -1,0 +1,58 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
+
+class PasswordsTest {
+
+	@Test
+	void test1() {
+		boolean result = Passwords.addPassword("jIIggy123");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test1AndAHalf() {
+		boolean result = Passwords.addPassword("jIIggy123");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test2() {
+		boolean result = Passwords.addPassword("JIIggy123");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test2AndAHalf() {
+		boolean result = Passwords.addPassword("jIIggy");
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test3() {
+		boolean result = Passwords.addPassword("JIIGGYYY");
+		assertTrue(result);
+	}
+	
+	@Test
+	void test3AndAHalf() {
+		boolean result = Passwords.addPassword("JIIGGY126");
+		System.out.println(Passwords.stored);
+		assertTrue(!result);
+	}
+	
+	@Test
+	void test6() {
+		boolean result = Passwords.addPassword("admin");
+		assertTrue(result);
+	}
+
+	@Test
+	void test6AndAHalf() {
+		boolean result = Passwords.addPassword("mod");
+		assertTrue(result);
+	}
+	
+}
